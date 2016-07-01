@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum Border: TransformationType {
+public enum Border: TransformationType {
     case style(isSolid: Bool, widthInPx: Int, color: Color)
     
-    var paramOfURL: String {
+    public var paramOfURL: String {
         return "bo"
     }
     
-    var valueOfParam: String {
+    public var valueOfParam: String {
         if case let .style(isSolid, width, color) = self {
             return "\(width)px" + (isSolid ? "_solid" : "") + "_\(color.rawValue)"
         }
