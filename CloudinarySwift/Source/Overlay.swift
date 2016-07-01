@@ -9,8 +9,8 @@
 import Foundation
 
 public enum Overlay: TransformationType {
-    case image(String)
-    case text(text: String, withPredefinedStyleID: String)
+    case image(publicID: String)
+    case text(text: String, withPredefinedStyleFromPublicID: String)
     
     public var paramOfURL: String {
         return "l"
