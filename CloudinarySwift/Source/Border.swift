@@ -2,9 +2,6 @@
 //  Border.swift
 //  CloudinarySwift
 //
-//  Created by Leandro Lourenci on 7/1/16.
-//
-//
 
 import Foundation
 
@@ -20,5 +17,4 @@ public enum Border: TransformationType {
             return "\(width)px" + (isSolid ? "_solid" : "") + "_\(color.rawValue)"
         }
     }
-    
 }
