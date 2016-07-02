@@ -9,8 +9,8 @@ public class Transformation {
     private var transformationTypes: [TransformationType] = []
     private var transformations: [Transformation] = []
     
-    init () {}
-    init(forTranformation: Transformation) {
+    public init () {}
+    public init(forTranformation: Transformation) {
         transformations.append(forTranformation)
     }
     
@@ -27,7 +27,8 @@ public class Transformation {
     }
     
     var URL: String {
-        var value = "/"
+        var value = ""
+        
         for transformation in transformations {
             for type in transformation.transformationTypes {
                 value += type.URL
@@ -39,5 +40,7 @@ public class Transformation {
         for type in transformationTypes {
             value += type.URL
         }
+        
+        return value
     }
 }
