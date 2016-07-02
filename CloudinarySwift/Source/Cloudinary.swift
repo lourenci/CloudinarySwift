@@ -22,7 +22,7 @@ public class Cloudinary {
         resultHandle(uploader.upload(file: file))
     }
     public func upload(file: Data, withTransformation transformation: Transformation, resultHandle: (String) -> ()) {
-        print(transformation.URL)
+        print(transformation.makeURL(withSeparator: "/"))
 //        resultHandle(uploader.upload(file: file))
     }
     

@@ -26,7 +26,7 @@ public class Transformation {
         return self
     }
     
-    var URL: String {
+    func makeURL(withSeparator separator: Character) -> String {
         var value = ""
         
         for transformation in transformations {
@@ -34,7 +34,7 @@ public class Transformation {
                 value += type.URL
             }
 
-            value += "/"
+            value += String(separator)
         }
         
         for type in transformationTypes {
