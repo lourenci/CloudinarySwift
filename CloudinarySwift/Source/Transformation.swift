@@ -10,7 +10,7 @@ public class Transformation {
     private var transformation: Transformation?
     
     private let transformationTypesSeparator = ","
-    private let transformationSeparator = "/"
+    internal var transformationSeparator = "/"
     
     public init () {}
     public init(forTranformation: Transformation) {
@@ -102,8 +102,13 @@ public class Transformation {
         
         return self
     }
+    public func other(custom: TransformationType) -> Self {
+        transformationTypes.append(custom)
         
-    var url: String {
+        return self
+    }
+        
+    var URL: String {
         return Transformation.makeURL(forTransformation: self, withChainSeparator: transformationSeparator)
     }
     
@@ -119,7 +124,7 @@ public class Transformation {
     
     private static func makeURL(forTransformation: Transformation, withChainSeparator separator: String) -> String {
         if let transformation = forTransformation.transformation {
-            return Transformation.makeURL(forTransformation: transformation, withChainSeparator: separator) + String(separator) + forTransformation.transformationTypesToURL()
+            return Transformation.makeURL(forTransformation: transformation, withChainSeparator: separator) + separator + forTransformation.transformationTypesToURL()
         } else {
             return forTransformation.transformationTypesToURL()
         }
