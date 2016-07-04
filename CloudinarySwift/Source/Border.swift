@@ -13,7 +13,8 @@ public enum Border: TransformationType {
     }
     
     public var valueOfParam: String {
-        if case let .style(isSolid, width, color) = self {
+        switch self {
+        case let .style(isSolid, width, color):
             return "\(width)px" + (isSolid ? "_solid" : "") + "_\(color.rawValue)"
         }
     }

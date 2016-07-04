@@ -2,9 +2,6 @@
 //  Width.swift
 //  CloudinarySwift
 //
-//  Created by Leandro Lourenci on 7/1/16.
-//
-//
 
 import Foundation
 

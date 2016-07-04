@@ -2,21 +2,18 @@
 //  Angle.swift
 //  CloudinarySwift
 //
-//  Created by Leandro Lourenci on 7/1/16.
-//
-//
 
 import Foundation
 
-enum Angle: TransformationType {
+public enum Angle: TransformationType {
     case degrees(Int)
     case autoRight, autoLeft, ignore, vflip, hflip
     
-    var paramOfURL: String {
+    public var paramOfURL: String {
         return "a"
     }
     
-    var valueOfParam: String {
+    public var valueOfParam: String {
         switch self {
         case .degrees(let value):
             return String(value)

@@ -1,9 +1,6 @@
 //
-//  EffectType.swift
+//  Effect.swift
 //  CloudinarySwift
-//
-//  Created by Leandro Lourenci on 7/1/16.
-//
 //
 
 import Foundation
@@ -97,6 +94,8 @@ public enum Effect: TransformationType {
             return "blur:" + String(value)
         case .blurRegion(let value):
             return "blur_region:" + String(value)
+        case .blurFaces(let value):
+            return "blur_faces:" + String(value)
         case .sharpen(let value):
             return "sharpen:" + String(value)
         case .unsharpMask(let value):
