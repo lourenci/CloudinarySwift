@@ -10,7 +10,7 @@ public final class Cloudinary {
     private let APIKey: String
     private let APISecret: String
     
-    private lazy var uploader: Uploader = Uploader(APIKey: self.APIKey, cloudName: self.cloudName)
+    private lazy var uploader: Uploader = Uploader(APIKey: self.APIKey, APISecret: self.APISecret, cloudName: self.cloudName)
     
     public init(cloudName: String, APIKey: String, APISecret: String) {
         self.cloudName = cloudName
@@ -22,7 +22,7 @@ public final class Cloudinary {
         resultHandle(uploader.upload(file: file))
     }
     public func upload(file: Data, withTransformation transformation: Transformation, resultHandle: (String) -> ()) {
-        resultHandle(transformation.URL)
+        resultHandle(transformation.url)
     }
     
 }
