@@ -9,7 +9,7 @@
 import XCTest
 @testable import Cloudinary
 
-class CloudinaryTests: XCTestCase {
+class TransformationTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -22,18 +22,15 @@ class CloudinaryTests: XCTestCase {
     }
     
     func testTransformationURL() {
+        let transformation = Transformation().crop(.fill).height(.pixel(50))
+        
+        XCTAssertEqual(transformation.url, "c_fill,h_50")
+    }
+    func testTransformationURLWithChain() {
         let transformation0 = Transformation().crop(.fill).height(.pixel(50))
         let transformation1 = Transformation(forTranformation: transformation0).height(.percent(0.5))
         let transformation2 = Transformation(forTranformation: transformation1).crop(.lpad).height(.pixel(30))
         
-        XCTAssertEqual(transformation2.toURL(withChainSeparator: "/") ,"c_fill,h_50/h_0.5/c_lpad,h_30")
+        XCTAssertEqual(transformation2.url, "c_fill,h_50/h_0.5/c_lpad,h_30")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
