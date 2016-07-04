@@ -8,11 +8,11 @@ import Foundation
 public protocol TransformationType {
     var paramOfURL: String { get }
     var valueOfParam: String { get }
-    var URL: String { get }
+    var url: String { get }
 }
 
 extension TransformationType {
-    public var URL: String {
+    public var url: String {
         return paramOfURL + "_" + valueOfParam
     }
 }

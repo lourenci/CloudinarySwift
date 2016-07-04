@@ -108,18 +108,18 @@ public class Transformation {
         return self
     }
         
-    var URL: String {
+    var url: String {
         return Transformation.makeURL(forTransformation: self, withChainSeparator: transformationSeparator)
     }
     
     private func transformationTypesToURL() -> String {
-        var URL = ""
+        var url = ""
 
         for type in transformationTypes {
-            URL += type.URL + transformationTypesSeparator
+            url += type.url + transformationTypesSeparator
         }
         
-        return String(URL.characters.dropLast())
+        return String(url.characters.dropLast())
     }
     
     private static func makeURL(forTransformation: Transformation, withChainSeparator separator: String) -> String {
