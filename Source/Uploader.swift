@@ -32,14 +32,13 @@ public class Uploader {
     func upload(file: Data) -> String {
         return "test"
     }
-    func upload(file: Data, withTransformation transformation: Transformation) -> String {
+    func upload(file: Data, withTransformation transformation: Transformation) {
         transformation.transformationSeparator = "|"
     }
     
     
     func makeURL(file: Data) {
-        var URL = ""
-        
+        _ = ""
     }
     
     
